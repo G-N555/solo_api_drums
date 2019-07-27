@@ -5,7 +5,7 @@ const mockDrums = [
     brand: "Ludwig",
     price: 36000,
     url:
-      "https://www.sweetwater.com/store/detail/LM402--ludwig-supraphonic-lm402-snare-drum-6.5-inch-by-14-inch"
+      "https://media.sweetwater.com/api/i/f-webp__q-82__ha-ee99b803bea0394e__hmac-0e644b4ae247ce8e77456b1277a878a3a0782924/images/items/750/LM402-large.jpg"
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const mockDrums = [
     brand: "Gretsch",
     price: 48000,
     url:
-      "https://www.sweetwater.com/store/detail/MightyMini--gretsch-drums-blackhawk-mighty-mini-snare-drum-5.5-inch-by-10-inch"
+      "https://media.sweetwater.com/api/i/f-webp__q-82__ha-c78c7a1b33dcd744__hmac-63aa406c6f8e06850f81c5c4b8d1fa0afc96bc06/images/items/750/MightyMini-large.jpg"
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ const mockDrums = [
     brand: "Tama",
     price: 28000,
     url:
-      "https://www.sweetwater.com/store/detail/LST148--tama-slp-big-black-steel-snare-drum-8-inch-by-14-inch-limited-edition"
+      "https://media.sweetwater.com/api/i/f-webp__q-82__ha-55a79fcade8481fa__hmac-f0dca11217b1fca5d829183c5761cef68afc13ce/images/items/750/LST148-large.jpg"
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ const mockDrums = [
     brand: "Ludwig",
     price: 78000,
     url:
-      "https://www.sweetwater.com/store/detail/LW6514C--ludwig-black-magic-snare-drum-6.5-inch-by-14-inch"
+      "https://media.sweetwater.com/api/i/f-webp__q-82__ha-2ef9625cc316d7eb__hmac-d6aea5269800eb34f715797a4c9d70e1136eac2a/images/items/750/LW6514C-large.jpg"
   },
   {
     id: 5,
@@ -37,7 +37,7 @@ const mockDrums = [
     brand: "DW",
     price: 89000,
     url:
-      "https://www.sweetwater.com/store/detail/DDSD6514BNCR--dw-design-series-snare-drum-6.5-inch-by-14-inch-black-nickel-over-brass"
+      "https://media.sweetwater.com/api/i/f-webp__q-82__ha-bb68df63973fc6f3__hmac-0b5b0e6ff306eae5f9a3d49ce2166ab3cbd2b459/images/items/750/DDSD6514BNCR-large.jpg.auto.webps"
   }
 ];
 

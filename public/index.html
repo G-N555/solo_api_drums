@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Drum shop</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <!-- Custom styles for this template -->
+    <link href="css/shop-item.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Drum shop</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"
+                >Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">It</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Is </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">A fake nav</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <h1 class="my-4">Drum Shop</h1>
+          <div class="row">
+            <div class="form-group">
+              <label for="productname">Name</label>
+              <input type="text" id="productname" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="brand">Brand
+              </label>
+              <input type="text" id="brand" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="price">Price
+                </label>
+                <input type="text" id="price" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="url">URL</label>
+              <input type="url" id="url" class="form-control" />
+            </div>    
+            <div class="col-sm-6">
+              <button type="button" id="addButton"
+                      class="btn btn-primary">
+                Add Product
+              </button>
+              <button type="button" id="showButton"
+                      class="btn btn-primary">
+                Show All Product
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- /.col-lg-3 -->
+        <div class="col-lg-9" id="bigFeild"></div>
+    <!-- Ajax -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+     <!-- Controllers -->
+  <script src="./access.js"></script>
+  </body>
+</html>

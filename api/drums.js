@@ -7,8 +7,6 @@ function isValidid(req, res, next) {
   !isNaN(req.params.id) ? next() : next(new Error("invalid ID"));
 }
 
-// async function isExist(req, res, next) {}
-
 router.get("/", (req, res) => {
   queries.getAll().then(drums => {
     res.json(drums);
