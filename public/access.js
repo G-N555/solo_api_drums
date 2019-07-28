@@ -4,13 +4,11 @@ const data = {};
 
 const field = document.getElementById("bigFeild");
 const inputData = () => {
-  data.id = 15;
   data.name = document.getElementById("productname").value;
   data.brand = document.getElementById("brand").value;
   data.price = document.getElementById("price").value;
   data.url = document.getElementById("url").value;
 };
-button.addEventListener("click", () => inputData());
 function append(baseElem, ...args) {
   return args.forEach(arg => baseElem.appendChild(arg));
 }
@@ -46,10 +44,50 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-  $("#addButton").click(function() {
-    $.post(Url, data, function(data, status) {
-      inputData();
-      console.log(`${data} and status is ${status}`);
+  $("#searchButton").click(function() {
+    inputData();
+    const target = data.name;
+    $.get(`${Url}/${target}`, function(drum, status) {
+      const { name, brand, price, url } = drum;
+      createItem(name, brand, price, url);
     });
+  });
+});
+
+$(document).ready(function() {
+  $("#addButton").click(function() {
+    inputData();
+    $.post(Url, data, function(drums, status) {
+      drums.map(drum => {
+        const { name, brand, price, url } = drum;
+        createItem(name, brand, price, url);
+      });
+    });
+  });
+});
+
+$(document).ready(function() {
+  $("#deleteButton").click(function() {
+    inputData();
+    const target = data.name;
+    $.ajax({
+      url: Url + "/" + target,
+      type: "DELETE",
+      success: function(drums) {
+        drums.map(drum => {
+          const { name, brand, price, url } = drum;
+          createItem(name, brand, price, url);
+        });
+      }
+    });
+  });
+});
+
+$(document).ready(function() {
+  $("#resetButton").click(function() {
+    const children = field.children;
+    for (let i = children.length - 1; i >= 0; --i) {
+      children[i].remove();
+    }
   });
 });

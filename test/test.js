@@ -8,14 +8,14 @@ const additionalDrum = {
   id: 9,
   name: "Additional",
   brand: "Nakano",
-  price: 200000,
+  price: "200,000",
   url: "https://www.Nakanofake.com/this/is/a/fake/url/"
 };
 
 const changeDrum = {
   name: "changeMan",
   brand: "Changed",
-  price: 41744,
+  price: "41,744",
   url: "https://www.Nakanofake.com/this/is/a/fake/url/"
 };
 
@@ -79,7 +79,7 @@ describe("drumShop test", () => {
       .then(res => {
         expect(res.body[0].name).to.be.equal("changeMan");
         expect(res.body[0].brand).to.be.equal("Changed");
-        expect(res.body[0].price).to.be.equal(41744);
+        expect(res.body[0].price).to.be.equal("41,744");
       });
   });
 

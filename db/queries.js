@@ -4,15 +4,20 @@ module.exports = {
   getAll() {
     return knex("drums").select();
   },
-  getOne(id) {
+  getOneById(id) {
     return knex("drums")
       .where({ id })
       .first();
   },
-  addOne(body) {
-    const { id, name, brand, price, url } = body;
+  getOneByName(name) {
     return knex("drums")
-      .insert([{ id, name, brand, price, url }])
+      .where("name", "like", `%${name}%`)
+      .select();
+  },
+  addOne(body) {
+    const { name, brand, price, url } = body;
+    return knex("drums")
+      .insert([{ name, brand, price, url }])
       .then(() => {
         return knex("drums").select();
       });
@@ -28,17 +33,19 @@ module.exports = {
           .select();
       });
   },
-  // replaceOne(body) {
-  //   const { id, name, brand, price, url } = body;
-  //   return knex("drums")
-  //     .update({ id, name, brand, price, url })
-  //     .then(() => {
-  //       return knex("drums").select();
-  //     });
-  // },
-  removeOne(id) {
+  deleteOneById(id) {
     return knex("drums")
       .where({ id })
+      .del()
+      .then(() => {
+        return knex("drums").select();
+      });
+  },
+  deleteOneByName(name) {
+    const newName = String(name);
+    return knex("drums")
+      .where({ name: newName })
+      .select()
       .del()
       .then(() => {
         return knex("drums").select();
