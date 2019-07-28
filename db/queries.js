@@ -15,9 +15,9 @@ module.exports = {
       .select();
   },
   addOne(body) {
-    const { name, brand, price, url } = body;
+    const { id, name, brand, price, url } = body;
     return knex("drums")
-      .insert([{ name, brand, price, url }])
+      .insert([{ id, name, brand, price, url }])
       .then(() => {
         return knex("drums").select();
       });
@@ -35,7 +35,8 @@ module.exports = {
   },
   deleteOneById(id) {
     return knex("drums")
-      .where({ id })
+      .where({ id: id })
+      .select()
       .del()
       .then(() => {
         return knex("drums").select();

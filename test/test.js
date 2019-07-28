@@ -5,7 +5,7 @@ const { expect, assert } = require("chai");
 const mockDrums = require("./mockDrums");
 
 const additionalDrum = {
-  id: 9,
+  id: 7,
   name: "Additional",
   brand: "Nakano",
   price: "200,000",
@@ -13,6 +13,7 @@ const additionalDrum = {
 };
 
 const changeDrum = {
+  id: 5,
   name: "changeMan",
   brand: "Changed",
   price: "41,744",
@@ -71,7 +72,7 @@ describe("drumShop test", () => {
 
   it("updates one drum", async () => {
     await request(app)
-      .patch("/api/v1/drums/1")
+      .patch("/api/v1/drums/5")
       .send(changeDrum)
       .set("Accept", "application/json")
       .expect("Content-Type", /json/)

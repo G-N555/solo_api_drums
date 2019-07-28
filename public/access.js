@@ -106,7 +106,9 @@ $(document).ready(function() {
 $(document).ready(function() {
   $("#deleteButton").click(function() {
     inputData();
-    const target = data.name;
+    data.id = document.getElementById("productId").value;
+    target = data.id || data.name;
+    console.log(target);
     $.ajax({
       url: Url + "/" + target,
       type: "DELETE",

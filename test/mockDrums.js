@@ -25,7 +25,7 @@ const mockDrums = [
   },
   {
     id: 4,
-    name: "Black Magic Snare Drum ",
+    name: "Black Magic Snare Drum",
     brand: "Ludwig",
     price: "78,000-",
     url:
