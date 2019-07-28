@@ -9,7 +9,7 @@ module.exports = {
       .where({ id })
       .first();
   },
-  getOneByName(name) {
+  getByName(name) {
     return knex("drums")
       .where("name", "like", `%${name}%`)
       .select();
@@ -22,14 +22,14 @@ module.exports = {
         return knex("drums").select();
       });
   },
-  updateOne(id, body) {
-    const { name, brand, price, url } = body;
+  updateOne(changeId, body) {
+    const { id, name, brand, price, url } = body;
     return knex("drums")
-      .where({ id })
-      .update({ name, brand, price, url })
+      .where({ id: changeId })
+      .update({ id, name, brand, price, url })
       .then(() => {
         return knex("drums")
-          .where({ id })
+          .where({ id: changeId })
           .select();
       });
   },

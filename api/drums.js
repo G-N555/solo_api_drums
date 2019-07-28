@@ -25,26 +25,19 @@ router.get("/:idOrName", (req, res, next) => {
       }
     });
   } else if (typeof idOrName === "string") {
-    queries.getOneByName(idOrName).then(drums => {
-      drums.map(drum => {
-        if (drum) {
-          console.log(drum);
-          res.json(drum);
-        } else {
-          res.status(404);
-          next();
-        }
-      });
+    queries.getByName(idOrName).then(drums => {
+      if (drums) {
+        res.json(drums);
+      } else {
+        res.status(404);
+        next();
+      }
     });
-  } else {
-    res.status(404);
-    next();
   }
 });
 
 router.post("/", (req, res) => {
   queries.addOne(req.body).then(drums => {
-    console.log(req.body);
     res.json(drums);
   });
 });
